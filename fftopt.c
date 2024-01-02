@@ -38,7 +38,8 @@ void idft(int Xn[], float Xr[], float Xi[], const int N, const int K)
 
 void fft(float data_re[], float data_im[], const int N)
 {
-  unsigned int target, mask = 0;
+  unsigned int target = 0;
+  unsigned int mask;
   for(unsigned int position=0; position<N; position++)
   {
     if(target>position) {
