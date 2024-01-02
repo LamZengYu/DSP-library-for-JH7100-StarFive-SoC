@@ -143,5 +143,5 @@ int main(int argc,  char **argv)
   for(i=0;i<100000;i++) fft(data1_re, data1_im, 128);
   stop = clock();
   cpu_time_used = ((double) (stop - start)) / CLOCKS_PER_SEC;
-  printf("Average time per fft %fms", cpu_time_used/1000);
+  printf("Average time per fft %fms\n", cpu_time_used/1000);
 }
