@@ -67,8 +67,7 @@ void fft(float data_re[], float data_im[], const int N)
     for(unsigned int group=0; group<step; group++)
     {
       angle = pi*((float) group+1)/step_d;
-      twiddle_re = cos(angle);
-      twiddle_im = sin(angle);
+      
       for(unsigned int pair=group; pair<N; pair+=jump)
       {
         const unsigned int match = pair + step;
@@ -85,6 +84,8 @@ void fft(float data_re[], float data_im[], const int N)
         continue;
       }
 
+    twiddle_re = cos(angle);
+    twiddle_im = sin(angle);
       
     }
   }
