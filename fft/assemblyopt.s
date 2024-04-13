@@ -175,7 +175,7 @@ fft:
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	flw	fa5,-32(s0)
-	fmadd.s fa5,fa3,fa4
+	fmadd.s fa5,fa5,fa3,fa4
 	fsw	fa5,-76(s0)
 	lwu	a5,-48(s0)
 	slli	a5,a5,2
