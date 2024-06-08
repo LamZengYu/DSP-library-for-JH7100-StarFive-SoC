@@ -51,8 +51,8 @@ convolve:
 	flw	fa5,0(a5)
 	fmul.s	fa5,fa3,fa5
 	ld	a5,-40(s0)
+ 	fadd.s	fa5,fa4,fa5
 	addi	a5,a5,4
-	fadd.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
 	ld	a5,-56(s0)
 	addi	a5,a5,8
@@ -66,8 +66,7 @@ convolve:
 	ld	a5,-64(s0)
 	addi	a5,a5,4
 	flw	fa5,0(a5)
-	fmul.s	fa5,fa3,fa5
-	fadd.s	fa4,fa4,fa5
+	fmadd.s fa4,fa3,fa5,fa4
 	ld	a5,-56(s0)
 	flw	fa3,0(a5)
 	ld	a5,-64(s0)
@@ -80,102 +79,101 @@ convolve:
 	fsw	fa5,0(a5)
 	lw	a5,-68(s0)
 	slli	a5,a5,2
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-4
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,2
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-4
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
 	lw	a5,-32(s0)
 	slli	a5,a5,2
+ 	ld	a4,-40(s0)
 	addi	a5,a5,-4
-	ld	a4,-40(s0)
+ 	fmul.s	fa5,fa4,fa5
 	add	a5,a4,a5
-	fmul.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
 	lw	a5,-68(s0)
 	slli	a5,a5,2
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-4
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,2
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-8
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
 	fmul.s	fa4,fa4,fa5
 	lw	a5,-68(s0)
 	slli	a5,a5,2
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-8
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,2
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-4
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
 	fmul.s	fa5,fa3,fa5
 	lw	a5,-32(s0)
 	slli	a5,a5,2
+ 	ld	a4,-40(s0)
 	addi	a5,a5,-8
-	ld	a4,-40(s0)
+ 	fadd.s	fa5,fa4,fa5
 	add	a5,a4,a5
-	fadd.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
 	lw	a5,-68(s0)
 	slli	a5,a5,2
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-4
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,2
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-12
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
 	fmul.s	fa4,fa4,fa5
 	lw	a5,-68(s0)
 	slli	a5,a5,2
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-8
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,2
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-8
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
-	fmul.s	fa5,fa3,fa5
-	fadd.s	fa4,fa4,fa5
+	fmadd fa4,fa3,fa5,fa4
 	lw	a5,-68(s0)
 	slli	a5,a5,2
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-12
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,2
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-4
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
 	fmul.s	fa5,fa3,fa5
 	lw	a5,-32(s0)
 	slli	a5,a5,2
+ 	ld	a4,-40(s0)
 	addi	a5,a5,-12
-	ld	a4,-40(s0)
+ 	fadd.s	fa5,fa4,fa5
 	add	a5,a4,a5
-	fadd.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
 	li	a5,3
 	sw	a5,-20(s0)
@@ -197,8 +195,8 @@ convolve:
 	sext.w	a5,a5
 	mv	a2,a5
 	lw	a5,-72(s0)
+ 	sext.w	a4,a2
 	sext.w	a3,a5
-	sext.w	a4,a2
 	ble	a3,a4,.L4
 	mv	a5,a2
 .L4:
@@ -208,8 +206,8 @@ convolve:
 	sext.w	a5,a5
 	mv	a2,a5
 	lw	a5,-20(s0)
+ 	sext.w	a4,a2
 	sext.w	a3,a5
-	sext.w	a4,a2
 	ble	a3,a4,.L5
 	mv	a5,a2
 .L5:
@@ -239,8 +237,8 @@ convolve:
 	lw	a5,-20(s0)
 	slli	a5,a5,2
 	ld	a4,-40(s0)
+ 	fadd.s	fa5,fa4,fa5
 	add	a5,a4,a5
-	fadd.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
 	lw	a5,-24(s0)
 	addiw	a5,a5,1
