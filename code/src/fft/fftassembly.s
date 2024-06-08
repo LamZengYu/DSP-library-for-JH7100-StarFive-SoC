@@ -234,15 +234,15 @@ fft:
 	addw	a5,a4,a5
 	sw	a5,-68(s0)
 	lwu	a5,-68(s0)
-	slli	a5,a5,2
 	ld	a4,-104(s0)
+	slli	a5,a5,2
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	flw	fa5,-32(s0)
 	fmul.s	fa4,fa4,fa5
 	lwu	a5,-68(s0)
-	slli	a5,a5,2
 	ld	a4,-112(s0)
+	slli	a5,a5,2
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	flw	fa5,-36(s0)
@@ -257,41 +257,40 @@ fft:
 	flw	fa5,-36(s0)
 	fmul.s	fa4,fa4,fa5
 	lwu	a5,-68(s0)
-	slli	a5,a5,2
 	ld	a4,-112(s0)
+	slli	a5,a5,2
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	flw	fa5,-32(s0)
-	fmul.s	fa5,fa3,fa5
-	fadd.s	fa5,fa4,fa5
-	fsw	fa5,-76(s0)
+	fmadd.s fa5,fa3,fa5,fa4
 	lwu	a5,-48(s0)
+	fsw	fa5,-76(s0)
 	slli	a5,a5,2
 	ld	a4,-104(s0)
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	lwu	a5,-68(s0)
-	slli	a5,a5,2
 	ld	a4,-104(s0)
+	slli	a5,a5,2
 	add	a5,a4,a5
 	flw	fa5,-72(s0)
 	fsub.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
 	lwu	a5,-48(s0)
-	slli	a5,a5,2
 	ld	a4,-112(s0)
+	slli	a5,a5,2
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	lwu	a5,-68(s0)
-	slli	a5,a5,2
 	ld	a4,-112(s0)
+	slli	a5,a5,2
 	add	a5,a4,a5
 	flw	fa5,-76(s0)
 	fsub.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
 	lwu	a5,-48(s0)
-	slli	a5,a5,2
 	ld	a4,-104(s0)
+	slli	a5,a5,2
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	lwu	a5,-48(s0)
