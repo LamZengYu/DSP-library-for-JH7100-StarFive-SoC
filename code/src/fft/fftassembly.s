@@ -29,48 +29,48 @@ fft:
 	sext.w	a5,a5
 	bleu	a4,a5,.L4
 	lwu	a5,-20(s0)
-	slli	a5,a5,2
 	ld	a4,-104(s0)
+	slli	a5,a5,2
 	add	a5,a4,a5
 	flw	fa5,0(a5)
+	lwu	a5,-20(s0)
 	fsw	fa5,-80(s0)
-	lwu	a5,-20(s0)
 	slli	a5,a5,2
 	ld	a4,-112(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
+	lwu	a5,-28(s0)	
 	fsw	fa5,-84(s0)
-	lwu	a5,-28(s0)
 	slli	a5,a5,2
 	ld	a4,-104(s0)
 	add	a4,a4,a5
 	lwu	a5,-20(s0)
-	slli	a5,a5,2
 	ld	a3,-104(s0)
-	add	a5,a3,a5
+	slli	a5,a5,2
 	flw	fa5,0(a4)
+	add	a5,a3,a5
 	fsw	fa5,0(a5)
 	lwu	a5,-28(s0)
-	slli	a5,a5,2
 	ld	a4,-112(s0)
+	slli	a5,a5,2
 	add	a4,a4,a5
 	lwu	a5,-20(s0)
-	slli	a5,a5,2
 	ld	a3,-112(s0)
-	add	a5,a3,a5
+	slli	a5,a5,2
 	flw	fa5,0(a4)
+	add	a5,a3,a5
 	fsw	fa5,0(a5)
 	lwu	a5,-28(s0)
-	slli	a5,a5,2
 	ld	a4,-104(s0)
-	add	a5,a4,a5
+	slli	a5,a5,2
 	flw	fa5,-80(s0)
+	add	a5,a4,a5
 	fsw	fa5,0(a5)
 	lwu	a5,-28(s0)
-	slli	a5,a5,2
 	ld	a4,-112(s0)
-	add	a5,a4,a5
+	slli	a5,a5,2
 	flw	fa5,-84(s0)
+	add	a5,a4,a5
 	fsw	fa5,0(a5)
 	j	.L4
 .L5:
