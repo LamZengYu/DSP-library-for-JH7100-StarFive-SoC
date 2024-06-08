@@ -154,7 +154,7 @@ convolve:
 	addi	a5,a5,-8
 	add	a5,a4,a5
 	flw	fa5,0(a5)
-	fmadd fa4,fa3,fa5,fa4
+	fmadd.s fa4,fa3,fa5,fa4
 	lw	a5,-68(s0)
 	slli	a5,a5,2
  	ld	a4,-56(s0)
