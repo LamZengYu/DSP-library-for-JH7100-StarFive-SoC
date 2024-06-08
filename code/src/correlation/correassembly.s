@@ -15,9 +15,8 @@ correlation:
 	sd	a4,-80(s0)
 	sw	a5,-68(s0)
 	mv	a5,a3
+ 	lw	a4,-68(s0)
 	sw	a5,-72(s0)
-	lw	a4,-68(s0)
-	lw	a5,-72(s0)
 	addw	a5,a4,a5
 	sext.w	a5,a5
 	addiw	a5,a5,-1
@@ -29,12 +28,11 @@ correlation:
 	li	a1,4
 	mv	a0,a5
 	call	calloc
-	mv	a5,a0
 	sd	a5,-40(s0)
 	lw	a5,-68(s0)
 	slli	a5,a5,2
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-4
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	ld	a5,-64(s0)
@@ -45,7 +43,6 @@ correlation:
 	lw	a5,-68(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-8
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	ld	a5,-64(s0)
@@ -54,7 +51,6 @@ correlation:
 	lw	a5,-68(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-4
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	ld	a5,-64(s0)
@@ -68,7 +64,6 @@ correlation:
 	lw	a5,-68(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-12
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa4,0(a5)
 	ld	a5,-64(s0)
@@ -77,34 +72,31 @@ correlation:
 	lw	a5,-68(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-8
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	ld	a5,-64(s0)
 	addi	a5,a5,4
 	flw	fa5,0(a5)
-	fmul.s	fa5,fa3,fa5
-	fadd.s	fa4,fa4,fa5
+	fmadd.s fa4,fa3,fa5,fa4
 	lw	a5,-68(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-4
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	flw	fa3,0(a5)
 	ld	a5,-64(s0)
 	addi	a5,a5,8
 	flw	fa5,0(a5)
+ 	ld	a5,-40(s0)
 	fmul.s	fa5,fa3,fa5
-	ld	a5,-40(s0)
 	addi	a5,a5,8
 	fadd.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
 	ld	a5,-56(s0)
 	flw	fa4,0(a5)
 	lw	a5,-72(s0)
+ 	ld	a4,-64(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-4
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
 	lw	a5,-32(s0)
@@ -122,21 +114,20 @@ correlation:
 	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
+ 	ld	a5,-56(s0)
 	fmul.s	fa4,fa4,fa5
-	ld	a5,-56(s0)
 	addi	a5,a5,4
 	flw	fa3,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-4
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
+ 	lw	a5,-32(s0)
 	fmul.s	fa5,fa3,fa5
-	lw	a5,-32(s0)
 	slli	a5,a5,2
+ 	ld	a4,-40(s0)
 	addi	a5,a5,-8
-	ld	a4,-40(s0)
 	add	a5,a4,a5
 	fadd.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
@@ -155,7 +146,6 @@ correlation:
 	lw	a5,-72(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-8
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
 	fmul.s	fa5,fa3,fa5
@@ -166,14 +156,13 @@ correlation:
 	lw	a5,-72(s0)
 	slli	a5,a5,2
 	addi	a5,a5,-4
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	flw	fa5,0(a5)
 	fmul.s	fa5,fa3,fa5
 	lw	a5,-32(s0)
 	slli	a5,a5,2
+ 	ld	a4,-40(s0)
 	addi	a5,a5,-12
-	ld	a4,-40(s0)
 	add	a5,a4,a5
 	fadd.s	fa5,fa4,fa5
 	fsw	fa5,0(a5)
@@ -197,8 +186,8 @@ correlation:
 	sext.w	a5,a5
 	mv	a2,a5
 	lw	a5,-72(s0)
+ 	sext.w	a4,a2
 	sext.w	a3,a5
-	sext.w	a4,a2
 	ble	a3,a4,.L4
 	mv	a5,a2
 .L4:
