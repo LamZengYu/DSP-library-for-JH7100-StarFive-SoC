@@ -28,6 +28,7 @@ correlation:
 	li	a1,4
 	mv	a0,a5
 	call	calloc
+	mv	a5,a0
 	sd	a5,-40(s0)
 	lw	a5,-68(s0)
 	slli	a5,a5,2
