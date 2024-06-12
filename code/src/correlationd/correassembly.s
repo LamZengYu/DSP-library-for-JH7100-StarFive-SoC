@@ -151,7 +151,7 @@ correlation:
 	addi	a5,a5,-16
 	add	a5,a4,a5
 	fld	fa5,0(a5)
-	fmul.d	fa5,fa3,fa5,fa4
+	fmadd.d	fa5,fa3,fa5,fa4
 	ld	a5,-56(s0)
 	addi	a5,a5,16
 	fld	fa3,0(a5)
