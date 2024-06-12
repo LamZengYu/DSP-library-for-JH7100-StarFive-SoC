@@ -66,7 +66,7 @@ convolve:
 	ld	a5,-64(s0)
 	addi	a5,a5,8
 	fld	fa5,0(a5)
-	fmadd.d	fa5,fa3,fa5,fa4
+	fmadd.d	fa4,fa3,fa5,fa4
 	ld	a5,-56(s0)
 	fld	fa3,0(a5)
 	ld	a5,-64(s0)
@@ -154,7 +154,7 @@ convolve:
 	addi	a5,a5,-16
 	add	a5,a4,a5
 	fld	fa5,0(a5)
-	fmadd.d	fa5,fa3,fa5,fa4
+	fmadd.d	fa4,fa3,fa5,fa4
 	lw	a5,-68(s0)
 	slli	a5,a5,3
  	ld	a4,-56(s0)
