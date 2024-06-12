@@ -490,7 +490,7 @@ running_time:
 	.section	.rodata
 	.align	3
 .LC7:
-	.string	"convooutput.txt"
+	.string	"dconvooutput.txt"
 	.text
 	.align	1
 	.globl	main
