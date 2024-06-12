@@ -482,7 +482,7 @@ running_time:
 	.section	.rodata
 	.align	3
 .LC7:
-	.string	"correoutput.txt"
+	.string	"dcorreoutput.txt"
 	.text
 	.align	1
 	.globl	main
