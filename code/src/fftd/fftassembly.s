@@ -264,8 +264,7 @@ fft:
 	add	a5,a4,a5
 	fld	fa3,0(a5)
 	fld	fa5,-40(s0)
-	fmul.d	fa5,fa3,fa5
-	fadd.d	fa5,fa4,fa5
+	fmadd.d	fa5,fa3,fa5,fa4
 	fsd	fa5,-120(s0)
 	lwu	a5,-60(s0)
 	slli	a5,a5,3
@@ -591,10 +590,10 @@ running_time:
 	.section	.rodata
 	.align	3
 .LC9:
-	.string	"fftcmagnitude.txt"
+	.string	"dfftmagnitude.txt"
 	.align	3
 .LC10:
-	.string	"fftcphase.txt"
+	.string	"dfftphase.txt"
 	.text
 	.align	1
 	.globl	main
