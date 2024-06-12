@@ -596,10 +596,10 @@ running_time:
 	.section	.rodata
 	.align	3
 .LC9:
-	.string	"fftcmagnitude.txt"
+	.string	"ffftmagnitude.txt"
 	.align	3
 .LC10:
-	.string	"fftcphase.txt"
+	.string	"ffftphase.txt"
 	.text
 	.align	1
 	.globl	main
