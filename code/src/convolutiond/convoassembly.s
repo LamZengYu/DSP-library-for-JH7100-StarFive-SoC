@@ -66,8 +66,7 @@ convolve:
 	ld	a5,-64(s0)
 	addi	a5,a5,8
 	fld	fa5,0(a5)
-	fmul.d	fa5,fa3,fa5
-	fadd.d	fa4,fa4,fa5
+	fmadd.d	fa5,fa3,fa5,fa4
 	ld	a5,-56(s0)
 	fld	fa3,0(a5)
 	ld	a5,-64(s0)
@@ -80,102 +79,101 @@ convolve:
 	fsd	fa5,0(a5)
 	lw	a5,-68(s0)
 	slli	a5,a5,3
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-8
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa4,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,3
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-8
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	lw	a5,-32(s0)
 	slli	a5,a5,3
+ 	ld	a4,-40(s0)
 	addi	a5,a5,-8
-	ld	a4,-40(s0)
 	add	a5,a4,a5
 	fmul.d	fa5,fa4,fa5
 	fsd	fa5,0(a5)
 	lw	a5,-68(s0)
 	slli	a5,a5,3
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-8
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa4,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,3
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-16
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa4,fa4,fa5
 	lw	a5,-68(s0)
 	slli	a5,a5,3
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-16
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa3,0(a5)
 	lw	a5,-72(s0)
+ 	ld	a4,-64(s0)
 	slli	a5,a5,3
 	addi	a5,a5,-8
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa5,fa3,fa5
 	lw	a5,-32(s0)
 	slli	a5,a5,3
+ 	ld	a4,-40(s0)
 	addi	a5,a5,-16
-	ld	a4,-40(s0)
 	add	a5,a4,a5
 	fadd.d	fa5,fa4,fa5
 	fsd	fa5,0(a5)
 	lw	a5,-68(s0)
 	slli	a5,a5,3
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-8
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa4,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,3
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-24
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa4,fa4,fa5
 	lw	a5,-68(s0)
 	slli	a5,a5,3
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-16
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa3,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,3
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-16
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
-	fmul.d	fa5,fa3,fa5
-	fadd.d	fa4,fa4,fa5
+	fmadd.d	fa5,fa3,fa5,fa4
 	lw	a5,-68(s0)
 	slli	a5,a5,3
+ 	ld	a4,-56(s0)
 	addi	a5,a5,-24
-	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa3,0(a5)
 	lw	a5,-72(s0)
 	slli	a5,a5,3
+ 	ld	a4,-64(s0)
 	addi	a5,a5,-8
-	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa5,fa3,fa5
 	lw	a5,-32(s0)
 	slli	a5,a5,3
+ 	ld	a4,-40(s0)
 	addi	a5,a5,-24
-	ld	a4,-40(s0)
+ 	fadd.d	fa5,fa4,fa5
 	add	a5,a4,a5
-	fadd.d	fa5,fa4,fa5
 	fsd	fa5,0(a5)
 	li	a5,3
 	sw	a5,-20(s0)
