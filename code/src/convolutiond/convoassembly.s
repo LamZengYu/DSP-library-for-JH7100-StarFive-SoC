@@ -26,7 +26,7 @@ convolve:
 	lw	a4,-32(s0)
 	sw	a4,0(a5)
 	lw	a5,-32(s0)
-	li	a1,4
+	li	a1,8
 	mv	a0,a5
 	call	calloc
 	mv	a5,a0
@@ -39,34 +39,11 @@ convolve:
 	ld	a5,-40(s0)
 	fsd	fa5,0(a5)
 	ld	a5,-56(s0)
-	addi	a5,a5,4
-	fld	fa4,0(a5)
-	ld	a5,-64(s0)
-	fld	fa5,0(a5)
-	fmul.d	fa4,fa4,fa5
-	ld	a5,-56(s0)
-	fld	fa3,0(a5)
-	ld	a5,-64(s0)
-	addi	a5,a5,4
-	fld	fa5,0(a5)
-	fmul.d	fa5,fa3,fa5
-	ld	a5,-40(s0)
- 	fadd.d	fa5,fa4,fa5
-	addi	a5,a5,4
-	fsd	fa5,0(a5)
-	ld	a5,-56(s0)
 	addi	a5,a5,8
 	fld	fa4,0(a5)
 	ld	a5,-64(s0)
 	fld	fa5,0(a5)
 	fmul.d	fa4,fa4,fa5
-	ld	a5,-56(s0)
-	addi	a5,a5,4
-	fld	fa3,0(a5)
-	ld	a5,-64(s0)
-	addi	a5,a5,4
-	fld	fa5,0(a5)
-	fmadd.d fa4,fa3,fa5,fa4
 	ld	a5,-56(s0)
 	fld	fa3,0(a5)
 	ld	a5,-64(s0)
@@ -77,103 +54,128 @@ convolve:
 	addi	a5,a5,8
 	fadd.d	fa5,fa4,fa5
 	fsd	fa5,0(a5)
+	ld	a5,-56(s0)
+	addi	a5,a5,16
+	fld	fa4,0(a5)
+	ld	a5,-64(s0)
+	fld	fa5,0(a5)
+	fmul.d	fa4,fa4,fa5
+	ld	a5,-56(s0)
+	addi	a5,a5,8
+	fld	fa3,0(a5)
+	ld	a5,-64(s0)
+	addi	a5,a5,8
+	fld	fa5,0(a5)
+	fmul.d	fa5,fa3,fa5
+	fadd.d	fa4,fa4,fa5
+	ld	a5,-56(s0)
+	fld	fa3,0(a5)
+	ld	a5,-64(s0)
+	addi	a5,a5,16
+	fld	fa5,0(a5)
+	fmul.d	fa5,fa3,fa5
+	ld	a5,-40(s0)
+	addi	a5,a5,16
+	fadd.d	fa5,fa4,fa5
+	fsd	fa5,0(a5)
 	lw	a5,-68(s0)
-	slli	a5,a5,2
- 	ld	a4,-56(s0)
-	addi	a5,a5,-4
+	slli	a5,a5,3
+	addi	a5,a5,-8
+	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa4,0(a5)
 	lw	a5,-72(s0)
-	slli	a5,a5,2
- 	ld	a4,-64(s0)
-	addi	a5,a5,-4
+	slli	a5,a5,3
+	addi	a5,a5,-8
+	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	lw	a5,-32(s0)
-	slli	a5,a5,2
- 	ld	a4,-40(s0)
-	addi	a5,a5,-4
- 	fmul.d	fa5,fa4,fa5
+	slli	a5,a5,3
+	addi	a5,a5,-8
+	ld	a4,-40(s0)
 	add	a5,a4,a5
+	fmul.d	fa5,fa4,fa5
 	fsd	fa5,0(a5)
 	lw	a5,-68(s0)
-	slli	a5,a5,2
- 	ld	a4,-56(s0)
-	addi	a5,a5,-4
+	slli	a5,a5,3
+	addi	a5,a5,-8
+	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa4,0(a5)
 	lw	a5,-72(s0)
-	slli	a5,a5,2
- 	ld	a4,-64(s0)
-	addi	a5,a5,-8
+	slli	a5,a5,3
+	addi	a5,a5,-16
+	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa4,fa4,fa5
 	lw	a5,-68(s0)
-	slli	a5,a5,2
- 	ld	a4,-56(s0)
-	addi	a5,a5,-8
+	slli	a5,a5,3
+	addi	a5,a5,-16
+	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa3,0(a5)
 	lw	a5,-72(s0)
-	slli	a5,a5,2
- 	ld	a4,-64(s0)
-	addi	a5,a5,-4
+	slli	a5,a5,3
+	addi	a5,a5,-8
+	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa5,fa3,fa5
 	lw	a5,-32(s0)
-	slli	a5,a5,2
- 	ld	a4,-40(s0)
-	addi	a5,a5,-8
- 	fadd.d	fa5,fa4,fa5
+	slli	a5,a5,3
+	addi	a5,a5,-16
+	ld	a4,-40(s0)
 	add	a5,a4,a5
+	fadd.d	fa5,fa4,fa5
 	fsd	fa5,0(a5)
 	lw	a5,-68(s0)
-	slli	a5,a5,2
- 	ld	a4,-56(s0)
-	addi	a5,a5,-4
+	slli	a5,a5,3
+	addi	a5,a5,-8
+	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa4,0(a5)
 	lw	a5,-72(s0)
-	slli	a5,a5,2
- 	ld	a4,-64(s0)
-	addi	a5,a5,-12
+	slli	a5,a5,3
+	addi	a5,a5,-24
+	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa4,fa4,fa5
 	lw	a5,-68(s0)
-	slli	a5,a5,2
- 	ld	a4,-56(s0)
-	addi	a5,a5,-8
+	slli	a5,a5,3
+	addi	a5,a5,-16
+	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa3,0(a5)
 	lw	a5,-72(s0)
-	slli	a5,a5,2
- 	ld	a4,-64(s0)
-	addi	a5,a5,-8
+	slli	a5,a5,3
+	addi	a5,a5,-16
+	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
-	fmadd.d fa4,fa3,fa5,fa4
+	fmul.d	fa5,fa3,fa5
+	fadd.d	fa4,fa4,fa5
 	lw	a5,-68(s0)
-	slli	a5,a5,2
- 	ld	a4,-56(s0)
-	addi	a5,a5,-12
+	slli	a5,a5,3
+	addi	a5,a5,-24
+	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa3,0(a5)
 	lw	a5,-72(s0)
-	slli	a5,a5,2
- 	ld	a4,-64(s0)
-	addi	a5,a5,-4
+	slli	a5,a5,3
+	addi	a5,a5,-8
+	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa5,fa3,fa5
 	lw	a5,-32(s0)
-	slli	a5,a5,2
- 	ld	a4,-40(s0)
-	addi	a5,a5,-12
- 	fadd.d	fa5,fa4,fa5
+	slli	a5,a5,3
+	addi	a5,a5,-24
+	ld	a4,-40(s0)
 	add	a5,a4,a5
+	fadd.d	fa5,fa4,fa5
 	fsd	fa5,0(a5)
 	li	a5,3
 	sw	a5,-20(s0)
@@ -195,8 +197,8 @@ convolve:
 	sext.w	a5,a5
 	mv	a2,a5
 	lw	a5,-72(s0)
- 	sext.w	a4,a2
 	sext.w	a3,a5
+	sext.w	a4,a2
 	ble	a3,a4,.L4
 	mv	a5,a2
 .L4:
@@ -206,8 +208,8 @@ convolve:
 	sext.w	a5,a5
 	mv	a2,a5
 	lw	a5,-20(s0)
- 	sext.w	a4,a2
 	sext.w	a3,a5
+	sext.w	a4,a2
 	ble	a3,a4,.L5
 	mv	a5,a2
 .L5:
@@ -219,26 +221,26 @@ convolve:
 	lw	a5,-28(s0)
 	addiw	a4,a5,-1
 	sw	a4,-28(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	ld	a4,-56(s0)
 	add	a5,a4,a5
 	fld	fa4,0(a5)
 	lw	a5,-24(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	ld	a4,-64(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	fmul.d	fa4,fa4,fa5
 	lw	a5,-20(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	ld	a4,-40(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	lw	a5,-20(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	ld	a4,-40(s0)
- 	fadd.d	fa5,fa4,fa5
 	add	a5,a4,a5
+	fadd.d	fa5,fa4,fa5
 	fsd	fa5,0(a5)
 	lw	a5,-24(s0)
 	addiw	a5,a5,1
@@ -278,93 +280,94 @@ convolve:
 	.globl	read_input
 	.type	read_input, @function
 read_input:
-	addi	sp,sp,-144
-	sd	ra,136(sp)
-	sd	s0,128(sp)
-	addi	s0,sp,144
+	addi	sp,sp,-160
+	sd	ra,152(sp)
+	sd	s0,144(sp)
+	sd	s1,136(sp)
+	addi	s0,sp,160
 	lui	a5,%hi(.LC0)
 	addi	a5,a5,%lo(.LC0)
 	ld	a4,0(a5)
-	sd	a4,-72(s0)
+	sd	a4,-88(s0)
 	ld	a4,8(a5)
-	sd	a4,-64(s0)
+	sd	a4,-80(s0)
 	lhu	a5,16(a5)
-	sh	a5,-56(s0)
-	addi	a4,s0,-72
+	sh	a5,-72(s0)
+	addi	a4,s0,-88
 	lui	a5,%hi(.LC1)
 	addi	a1,a5,%lo(.LC1)
 	mv	a0,a4
 	call	fopen
-	sd	a0,-32(s0)
-	sw	zero,-20(s0)
+	sd	a0,-48(s0)
+	sw	zero,-36(s0)
 	j	.L11
 .L12:
-	lw	a5,-20(s0)
+	lw	a5,-36(s0)
 	addiw	a5,a5,1
-	sw	a5,-20(s0)
+	sw	a5,-36(s0)
 .L11:
-	addi	a5,s0,-104
-	ld	a2,-32(s0)
+	addi	a5,s0,-120
+	ld	a2,-48(s0)
 	li	a1,30
 	mv	a0,a5
 	call	fgets
 	mv	a5,a0
 	bne	a5,zero,.L12
-	ld	a0,-32(s0)
+	ld	a0,-48(s0)
 	call	fclose
-	lw	a5,-20(s0)
-	slli	a5,a5,2
+	lw	a5,-36(s0)
+	slli	a5,a5,3
 	mv	a0,a5
 	call	malloc
 	mv	a5,a0
-	sd	a5,-40(s0)
-	sw	zero,-24(s0)
-	addi	a4,s0,-72
+	sd	a5,-56(s0)
+	sw	zero,-40(s0)
+	addi	a4,s0,-88
 	lui	a5,%hi(.LC1)
 	addi	a1,a5,%lo(.LC1)
 	mv	a0,a4
 	call	fopen
-	sd	a0,-32(s0)
+	sd	a0,-48(s0)
 	j	.L13
 .L15:
-	addi	a5,s0,-136
+	addi	a5,s0,-152
 	li	a1,10
 	mv	a0,a5
 	call	strchr
-	sd	a0,-48(s0)
-	ld	a5,-48(s0)
+	sd	a0,-64(s0)
+	ld	a5,-64(s0)
 	beq	a5,zero,.L14
-	ld	a5,-48(s0)
+	ld	a5,-64(s0)
 	sb	zero,0(a5)
 .L14:
-	addi	a5,s0,-136
+	lw	a5,-40(s0)
+	slli	a5,a5,3
+	ld	a4,-56(s0)
+	add	s1,a4,a5
+	addi	a5,s0,-152
 	mv	a0,a5
 	call	atof
 	fmv.d	fa5,fa0
-	lw	a5,-24(s0)
-	slli	a5,a5,2
-	ld	a4,-40(s0)
-	add	a5,a4,a5
-	fcvt.s.d	fa5,fa5
-	fsd	fa5,0(a5)
-	lw	a5,-24(s0)
+	fsd	fa5,0(s1)
+	lw	a5,-40(s0)
 	addiw	a5,a5,1
-	sw	a5,-24(s0)
+	sw	a5,-40(s0)
 .L13:
-	addi	a5,s0,-136
-	ld	a2,-32(s0)
+	addi	a5,s0,-152
+	ld	a2,-48(s0)
 	li	a1,30
 	mv	a0,a5
 	call	fgets
 	mv	a5,a0
 	bne	a5,zero,.L15
-	ld	a0,-32(s0)
+	ld	a0,-48(s0)
 	call	fclose
-	ld	a5,-40(s0)
+	ld	a5,-56(s0)
 	mv	a0,a5
-	ld	ra,136(sp)
-	ld	s0,128(sp)
-	addi	sp,sp,144
+	ld	ra,152(sp)
+	ld	s0,144(sp)
+	ld	s1,136(sp)
+	addi	sp,sp,160
 	jr	ra
 	.size	read_input, .-read_input
 	.section	.rodata
@@ -396,11 +399,10 @@ write_output:
 	j	.L18
 .L19:
 	lw	a5,-20(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	ld	a4,-40(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
-	fcvt.d.s	fa5,fa5
 	fmv.x.d	a2,fa5
 	lui	a5,%hi(.LC3)
 	addi	a1,a5,%lo(.LC3)
@@ -490,7 +492,7 @@ running_time:
 	.section	.rodata
 	.align	3
 .LC7:
-	.string	"fconvooutput.txt"
+	.string	"convooutput.txt"
 	.text
 	.align	1
 	.globl	main
@@ -518,27 +520,27 @@ main:
 	lw	a1,-76(s0)
 	mv	s4,a1
 	li	s5,0
-	srli	a1,s4,59
-	slli	t2,s5,5
+	srli	a1,s4,58
+	slli	t2,s5,6
 	or	t2,a1,t2
-	slli	t1,s4,5
+	slli	t1,s4,6
 	lw	a1,-76(s0)
 	mv	s2,a1
 	li	s3,0
-	srli	a1,s2,59
-	slli	a7,s3,5
+	srli	a1,s2,58
+	slli	a7,s3,6
 	or	a7,a1,a7
-	slli	a6,s2,5
+	slli	a6,s2,6
 	lw	a1,-76(s0)
-	slli	a1,a1,2
+	slli	a1,a1,3
 	addi	a1,a1,15
 	srli	a1,a1,4
 	slli	a1,a1,4
 	sub	sp,sp,a1
 	mv	a1,sp
-	addi	a1,a1,3
-	srli	a1,a1,2
-	slli	a1,a1,2
+	addi	a1,a1,7
+	srli	a1,a1,3
+	slli	a1,a1,3
 	sd	a1,-96(s0)
 	lw	a1,-76(s0)
 	addi	a1,a1,-1
@@ -546,27 +548,27 @@ main:
 	lw	a1,-76(s0)
 	mv	t5,a1
 	li	t6,0
-	srli	a1,t5,59
-	slli	a3,t6,5
+	srli	a1,t5,58
+	slli	a3,t6,6
 	or	a3,a1,a3
-	slli	a2,t5,5
+	slli	a2,t5,6
 	lw	a3,-76(s0)
 	mv	t3,a3
 	li	t4,0
-	srli	a3,t3,59
-	slli	a5,t4,5
+	srli	a3,t3,58
+	slli	a5,t4,6
 	or	a5,a3,a5
-	slli	a4,t3,5
+	slli	a4,t3,6
 	lw	a5,-76(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	addi	a5,a5,15
 	srli	a5,a5,4
 	slli	a5,a5,4
 	sub	sp,sp,a5
 	mv	a5,sp
-	addi	a5,a5,3
-	srli	a5,a5,2
-	slli	a5,a5,2
+	addi	a5,a5,7
+	srli	a5,a5,3
+	slli	a5,a5,3
 	sd	a5,-112(s0)
 	call	read_input
 	sd	a0,-120(s0)
@@ -574,23 +576,23 @@ main:
 	j	.L24
 .L25:
 	lw	a5,-84(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	ld	a4,-120(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	ld	a4,-96(s0)
 	lw	a5,-84(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	add	a5,a4,a5
 	fsd	fa5,0(a5)
 	lw	a5,-84(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	ld	a4,-120(s0)
 	add	a5,a4,a5
 	fld	fa5,0(a5)
 	ld	a4,-112(s0)
 	lw	a5,-84(s0)
-	slli	a5,a5,2
+	slli	a5,a5,3
 	add	a5,a4,a5
 	fsd	fa5,0(a5)
 	lw	a5,-84(s0)
