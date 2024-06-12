@@ -1,0 +1,10 @@
+Error result: 
+
+FFT magnitude (single precision): 4.455078e-06
+FFT magnitude (double precision): 2.590820e-06
+FFT phase (single precision): 4.425781e-06
+FFT phase (double precision): 1.800781e-06
+Convolution (single precision): 4.231387e-04
+Convolution (double precision): 7.999511e-05
+Correlation (single precision): 2.775779e-04
+Correlation (double precision): 7.374597e-05
