@@ -1,5 +1,5 @@
 #!/bin/bash
-ori_dir = "../../checkoutput/"
+ori_dir="../../checkoutput/"
 
 cd ../src/fft
 echo "Running FFT (original)"
