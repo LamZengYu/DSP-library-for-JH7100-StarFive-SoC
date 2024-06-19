@@ -4,7 +4,7 @@
 #include <math.h>
 #include <string.h>
 
-double* correlation(double h[], double x[], int lenH, int lenX, int* lenY)
+double* correlation_opt_d(double h[], double x[], int lenH, int lenX, int* lenY)
 {
   const int ncorr = lenH+lenX-1;
   (*lenY) = ncorr;
