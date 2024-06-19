@@ -1,10 +1,12 @@
-  int a, c = 0;
+  int a = N/2;
   int b = N;
-  for(int i=0; i<N; i++)
+  int c = 0;
+  for(int i=1; i<N-1; i++)
   {
-    c = -M_PI*a/N;
-    b = N;
+    c = -M_PI*a;
     while(a & (b >>=1))
         a &= ~b;
     a |= b;
+    b = N;
+    c /= N;
   }
