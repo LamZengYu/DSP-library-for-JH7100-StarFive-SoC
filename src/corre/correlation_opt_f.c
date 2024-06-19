@@ -4,7 +4,7 @@
 #include <math.h>
 #include <string.h>
 
-float* correlation(float h[], float x[], int lenH, int lenX, int* lenY)
+float* correlation_opt_f(float h[], float x[], int lenH, int lenX, int* lenY)
 {
   const int ncorr = lenH+lenX-1;
   (*lenY) = ncorr;
