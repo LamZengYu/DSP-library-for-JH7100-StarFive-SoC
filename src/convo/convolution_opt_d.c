@@ -1,4 +1,8 @@
 #include "../../include/dsp.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
 
 double* convolve(double h[], double x[], int lenH, int lenX, int* lenY)
 {
