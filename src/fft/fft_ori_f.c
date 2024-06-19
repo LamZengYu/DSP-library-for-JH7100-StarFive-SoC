@@ -1,3 +1,5 @@
+#include "../../include/dsp.h"
+
 void fft_ori_f(float data_re[], float data_im[], const int N)
 {
   unsigned int target = 0;
