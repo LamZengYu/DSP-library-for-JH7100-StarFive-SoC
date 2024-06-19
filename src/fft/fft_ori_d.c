@@ -1,3 +1,5 @@
+#include "../../include/dsp.h"
+
 void fft(double data_re[], double data_im[], const int N)
 {
   unsigned int target = 0;
