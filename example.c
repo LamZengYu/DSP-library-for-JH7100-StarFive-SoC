@@ -111,7 +111,7 @@ int main(int argc,  char **argv)
   }
   fft_opt_f(data_re_f,data_im_f,len);
   fft_opt_d(data_re_d,data_im_d,len);
-  float *y1_f = convolution_opt_f(h_f,x_f,len,len,&lenY1_f);
+  float *y1_f = convolution_op_f(h_f,x_f,len,len,&lenY1_f);
   double *y1_d = convolution_opt_d(h_d,x_d,len,len,&lenY1_d);
   float *y2_f = correlation_opt_f(h_f,x_f,len,len,&lenY2_f);
   double *y2_d = correlation_opt_d(h_d,x_d,len,len,&lenY2_d);
