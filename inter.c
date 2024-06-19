@@ -1,6 +1,6 @@
   int a = N/2;
   int b = N;
-  int c = 0;
+  int c;
   for(int i=1; i<N-1; i++)
   {
     c = -M_PI*a;
