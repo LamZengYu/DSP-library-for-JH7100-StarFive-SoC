@@ -2,7 +2,7 @@ mv	a5, a2
 sw	a5, -116(s0)
 lw	a5, -116(s0)
 srliw	a4, a5, 31
-#intermediate operations that will change the value of a5
+:intermediate operations that will change the value of a5
 sw	a5, -20(s0)
 lw	a5, -116(s0)
 sw	a5, -24(s0)
