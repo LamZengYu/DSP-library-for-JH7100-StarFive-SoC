@@ -1,3 +1,5 @@
+#include "../../include/dsp.h"
+
 void fft_opt_d(double data_re[], double data_im[], const int N)
 {
 
