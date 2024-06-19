@@ -1,12 +1,4 @@
 #!/bin/bash
-./exeori
-./exeinl
-./exearr
-./exeunr
-./exefinalo
-./exefinaloo
-./exefinal
-./exeassem
 
 echo "Running FFT (original)"
 ../src/fft/exeori | tee -a "./running_time.txt"
