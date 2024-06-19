@@ -1,18 +1,19 @@
 #!/bin/bash
 
+cd ../src/fft
 echo "Running FFT (original)"
-../src/fft/exeori
+./exeori
 echo "Running FFT (inlining)"
-../src/fft/exeinl
+./exeinl
 echo "Running FFT (rearranging)"
-../src/fft/exearr
+./exearr
 echo "Running FFT (loop unrolling)"
-../src/fft/exeunr
+./exeunr
 echo "Running FFT (GCC -o1)"
-../src/fft/exefinalo
+./exefinalo
 echo "Running FFT (GCC -o2)"
-../src/fft/exefinaloo
+./exefinaloo
 echo "Running FFT (GCC -o3)"
-../src/fft/exefinal
+./exefinal
 echo "Running FFT (assembly)"
-../src/fft/exeassem
+./exeassem
