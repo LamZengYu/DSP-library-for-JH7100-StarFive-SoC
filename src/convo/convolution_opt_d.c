@@ -1,3 +1,5 @@
+#include "../../include/dsp.h"
+
 double* convolve(double h[], double x[], int lenH, int lenX, int* lenY)
 {
   const int nconv = lenH+lenX-1;
