@@ -37,8 +37,9 @@ void fft_opt_d(double data_re[], double data_im[], const int N)
         data_im[position+1] = temp_im;
     }
 
-    while(target & (mask >>=1))
+    while(target & (mask >>=1)) {
         target &= ~mask;
+    }
         target |= mask;
         mask = N;
   }
