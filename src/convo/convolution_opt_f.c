@@ -1,4 +1,8 @@
 #include "../../include/dsp.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
 
 float* convolve(float h[], float x[], int lenH, int lenX, int* lenY)
 {
