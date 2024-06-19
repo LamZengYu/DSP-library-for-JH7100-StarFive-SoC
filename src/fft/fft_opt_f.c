@@ -1,4 +1,8 @@
 #include "../../include/dsp.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
 
 void fft_opt_f(float data_re[], float data_im[], const int N)
 {
