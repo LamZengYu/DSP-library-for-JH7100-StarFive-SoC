@@ -10,7 +10,7 @@ main: main.o src/fft/fft_opt_f.o src/fft/fft_opt_d.o src/convo/convolution_opt_f
 
 # Compiling source files into object files
 main.o: example.c include/dsp.h
-	$(CC) $(CFLAGS) -c example.c
+	$(CC) $(CFLAGS) -c example.c -o main.o
 
 src/fft/fft_opt_f.o: src/fft/fft_opt_f.c include/dsp.h
 	$(CC) $(CFLAGS) -c src/fft/fft_opt_f.c -o src/fft/fft_opt_f.o
