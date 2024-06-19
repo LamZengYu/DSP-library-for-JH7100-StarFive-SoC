@@ -1,19 +1,20 @@
 #!/bin/bash
+ori_dir = "../../checkoutput/"
 
 cd ../src/fft
 echo "Running FFT (original)"
-./exeori
+./exeori | tee "$ori_dir/output.txt"
 echo "Running FFT (inlining)"
-./exeinl
+./exeinl | tee "$ori_dir/output.txt"
 echo "Running FFT (rearranging)"
-./exearr
+./exearr | tee "$ori_dir/output.txt"
 echo "Running FFT (loop unrolling)"
-./exeunr
+./exeunr | tee "$ori_dir/output.txt"
 echo "Running FFT (GCC -o1)"
-./exefinalo
+./exefinalo | tee "$ori_dir/output.txt"
 echo "Running FFT (GCC -o2)"
-./exefinaloo
+./exefinaloo | tee "$ori_dir/output.txt"
 echo "Running FFT (GCC -o3)"
-./exefinal
+./exefinal | tee "$ori_dir/output.txt"
 echo "Running FFT (assembly)"
-./exeassem
+./exeassem | tee "$ori_dir/output.txt"
