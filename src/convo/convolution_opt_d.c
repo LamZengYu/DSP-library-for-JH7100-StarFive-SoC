@@ -4,7 +4,7 @@
 #include <math.h>
 #include <string.h>
 
-double* convolve(double h[], double x[], int lenH, int lenX, int* lenY)
+double* convolution_opt_d(double h[], double x[], int lenH, int lenX, int* lenY)
 {
   const int nconv = lenH+lenX-1;
   (*lenY) = nconv;
