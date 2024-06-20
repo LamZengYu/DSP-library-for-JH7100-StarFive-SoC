@@ -47,7 +47,7 @@ void fft_opt_d(double data_re[], double data_im[], const int N)
   //Butterfly operation computation
   const double pi = -3.14159265358979323846;
   double twiddle_re, twiddle_im, angle;
-  for(unsigned int step=1; step<N; step <<=1)
+  for(unsigned int step=1; step<N; step<<=1)
   {
     const unsigned int jump = step << 1;
     twiddle_re = 1.0;
