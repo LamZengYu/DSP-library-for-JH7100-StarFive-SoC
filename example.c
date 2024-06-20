@@ -98,7 +98,7 @@ int main(int argc,  char **argv)
   float h_f[len];
   double x_d[len];
   double h_d[len];
-  int lenY1_f,lenY1_d,lenY2_f,lenY2_d;
+  int lenY1_f,,lenY2_f,lenY1_d, lenY2_d;
   float* input_data_f = read_input_f();
   double* input_data_d = read_input_d(); 
   for (int i = 0; i < len; i++) {
