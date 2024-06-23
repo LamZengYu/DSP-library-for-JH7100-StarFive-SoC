@@ -21,6 +21,24 @@ echo "Running FFT single precision (GCC -o3)" | tee -a "$ori_dir/running_time.tx
 echo "Running FFT single precision (assembly)" | tee -a "$ori_dir/running_time.txt"
 ./exeassem | tee -a "$ori_dir/running_time.txt"
 
+cd ../convolution
+echo "Running convo single precision (original)" | tee -a "$ori_dir/running_time.txt"
+./exeori | tee -a "$ori_dir/running_time.txt"
+echo "Running convo single precision (inlining)" | tee -a "$ori_dir/running_time.txt"
+./exeinl | tee -a "$ori_dir/running_time.txt"
+echo "Running convo single precision (rearranging)" | tee -a "$ori_dir/running_time.txt"
+./exearr | tee -a "$ori_dir/running_time.txt"
+echo "Running convo single precision (loop unrolling)" | tee -a "$ori_dir/running_time.txt"
+./exeunr | tee -a "$ori_dir/running_time.txt"
+echo "Running convo single precision (GCC -o1)" | tee -a "$ori_dir/running_time.txt"
+./exefinalo | tee -a "$ori_dir/running_time.txt"
+echo "Running convo single precision (GCC -o2)" | tee -a "$ori_dir/running_time.txt"
+./exefinaloo | tee -a "$ori_dir/running_time.txt"
+echo "Running convo single precision (GCC -o3)" | tee -a "$ori_dir/running_time.txt"
+./exefinal | tee -a "$ori_dir/running_time.txt"
+echo "Running convo single precision (assembly)" | tee -a "$ori_dir/running_time.txt"
+./exeassem | tee -a "$ori_dir/running_time.txt"
+
 cd ../fftd
 echo "Running FFT double precision (original)" | tee -a "$ori_dir/running_time.txt"
 ./exeori | tee -a "$ori_dir/running_time.txt"
